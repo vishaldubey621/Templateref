@@ -1,0 +1,62 @@
+
+<!-- Example of elementref using style -->
+<div class="card">
+    <div class="card-header">
+        Element ref and templeteRef using style
+    </div>
+    
+       <div class="card-body">
+            <p class="card-text"> </p>
+              <div #change>
+                  <span >I am  web Developer</span>
+               </div>
+            
+            <button class="btn btn-primary" (click)="click()">click me for style</button>
+      </div>
+</div>&nbsp;&nbsp;
+
+
+<!-- Example of classListAdd() and ClasssListRemove using Elementref -->
+<div class="card">
+  <div class="card-header">
+      Example of classListAdd() and remove()
+  </div>
+ 
+     <div class="card-body2">
+          <p class="card-text"></p>
+          
+            <div #change1>
+                <span> <h2>I am  Angular Developer</h2></span>
+             </div>
+            </div>
+          
+          <button class="btn btn-primary" (click)="click1()">click for Add style</button> <br>
+          <button class="btn btn-primary" (click)="click2()">click for Remove style</button>
+    </div> &nbsp;&nbsp;
+
+
+  <!-- Example of move one component to another component through button   -->
+<div class="card">
+  <div class="card-header">
+    Move one component in another component
+  </div>
+ 
+     <div class="card-body2">
+          <p class="card-text"></p>
+          
+            <div #change1>
+                <span> <h4>I am  Angular Developer</h4></span>
+             </div>
+            </div>
+          
+          <button class="btn btn-primary" (click)="click3()">click to addcomponent</button> <br>
+          <app-elementchild>
+            <p #childCon>this is child content</p>
+            </app-elementchild>
+         
+    </div>
+
+
+
+
+  

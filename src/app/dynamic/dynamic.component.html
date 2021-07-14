@@ -1,0 +1,50 @@
+
+<!-- deffine refrence mytemplate -->
+<ng-template #myTemplate let-User="User">
+    <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+        <div *ngIf = "isValid">
+                <p *ngFor = "let User of User">
+                    <span *ngIf="User.EmployeeSallary>15000 || User.EmployeeSallary==15000">  
+                    <li>{{User.EmployeeName}}</li>
+                     <li>{{User.EmployeeSallary}}</li>             
+                    <!-- </ng-template> --> 
+                    </span>
+            
+                     
+                  </p>
+               
+         </div>
+   </ul> 
+</ng-template>
+
+        <!-- <li>{{name}}</li> -->
+   
+
+
+ <!-- headerSection -->
+<div class="header">
+    <h4>this is header sectiion</h4>
+
+    <!-- for Single element add  -->
+    <!-- <div *ngTemplateOutlet = "myTemplate ; context:{ $implicit:'vishal'}"></div> -->
+
+    <!-- for multple element add -->
+    <div *ngTemplateOutlet = "myTemplate ; context: Employee"></div>
+    
+</div>
+
+<!-- Body Setion -->
+<div class="body">
+    <h1>this is body</h1>
+    <button class="btn btn-primary" (click) = "show()">show header Section</button>
+    
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+    <h4>this is footer section</h4>
+    <ng-container *ngTemplateOutlet =myTemplate></ng-container>
+</div>

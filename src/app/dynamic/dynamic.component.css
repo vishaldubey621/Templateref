@@ -1,0 +1,20 @@
+.header
+{
+   background-color: violet;
+    padding-bottom: 34px;
+    text-align: center;
+    
+} 
+.body{
+    background-color:white;
+    padding-bottom: 245px;
+    text-align: center;
+    color: red;
+
+}
+.footer
+{
+    background-color: violet;
+    padding-bottom: 34px;
+    text-align: center;
+}
