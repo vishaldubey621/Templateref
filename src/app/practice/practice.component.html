@@ -1,0 +1,22 @@
+<h4>-------------------------------------------------------------Example of pipes---------------------------------------------</h4>
+<div class="check">
+    <h1> {{today | date }}</h1>
+    <h1> {{today | date:'fullDate' }}</h1>
+</div>
+<div class="check2">
+    <h2>{{name | uppercase}}</h2>
+    <h2>{{name | lowercase}}</h2>
+    <h2>{{name | titlecase}}</h2>
+ </div>
+ <div class="check3">
+     <h2>I have {{money | currency:'USD'}} money</h2>
+     <h2>I have {{money | currency:'CAD'}} money</h2>
+ </div>
+
+ <h4>-------------------------------------------------------------Example of  images---------------------------------------------</h4>
+<div class="image">
+<img [src]="url" height="222" width="222">
+<img [src]="url2" height="222" width="222">
+<img [src]="url3" height="222" width="222">
+<img [src]="url4" height="222" width="222">
+</div>

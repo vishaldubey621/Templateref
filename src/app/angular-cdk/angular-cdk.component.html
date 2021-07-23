@@ -1,0 +1,74 @@
+<!-- Example of virtual Scrolling -->
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+    <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+</cdk-virtual-scroll-viewport>
+
+<!-- Example of drag drop -->
+<div cdkDropListGroup>
+    <div class="example-container">
+      <h2>To do</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="todo"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <h2>Done</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+ </div>
+
+<!-- Example of overlay -->
+<div class="button">
+    <button (click)="isOpen = !isOpen" type="button" class="btn btn-success"  cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+        {{isOpen ? "close form" : "open form"}}
+    </button>
+</div>
+
+<!-- this form will generate click on open form -->
+  <ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+>
+
+<div class="container"> 
+    <form >
+    <b>Enter Name :</b>
+    <input type="text" formControlName = "name" required><br><br>
+
+    <b>Select Gender :</b>
+    <input type="radio" formControlName = "Gender" name="male" select>male
+    <input type="radio" formControlName = "Gender" name="male" select>female <br><br>
+
+    <b>Select Hobbies :</b><br>
+    <input type="checkbox" formControlName = "hobbies" value="male">cricket<br>
+     <input type="checkbox" formControlName = "hobbies" value="male">playing<br>
+    <input type="checkbox" formControlName = "hobbies" value="male">eating<br><br>
+
+    <b>Select City:</b>
+    <select>
+        select city
+        <option>vapi</option>
+        <option>valsad</option>
+        <option>Ahemabad</option>
+    </select><br><br>
+
+        <input type="submit">
+</form>
+</div>
+</ng-template>
+<!-- Example of portal -->
+

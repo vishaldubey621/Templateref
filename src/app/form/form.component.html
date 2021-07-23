@@ -1,0 +1,27 @@
+
+<h2>About</h2>
+<div class="form-group">
+   
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search name"[(ngModel)]="nameSearch">
+  </div>
+
+<table class="table">
+
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Srno</th>
+        <th scope="col">Name</th>
+        <th scope="col">Sallary</th>
+   
+      </tr>
+    </thead>
+    <tbody>
+      <!-- use custome pipe name filter -->
+      <tr *ngFor="let name of nameArr | filter:nameSearch">
+        <th scope="row">{{name.Srno}}</th>
+        <td>{{name.Name}}</td>
+        <td>{{name.Sallary}}</td>
+     </tr>
+     
+    </tbody>
+  </table>
