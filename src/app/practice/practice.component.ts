@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { DynamicComponent } from '../dynamic/dynamic.component';
 
 @Component({
   selector: 'app-practice',
@@ -10,13 +11,33 @@ export class PracticeComponent implements OnInit {
   name  = "vishal dubey";
   money = 122;
  
+  @ViewChild('container', { read: ViewContainerRef })  
+   container!: ViewContainerRef;  
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }  
+  public add(): void {  
+   
+    // create the component factory  
+    const dynamicComponentFactory = this.componentFactoryResolver.resolveComponentFactory(DynamicComponent);  
+    // add the component to the view  
+    const componentRef = this.container.createComponent(dynamicComponentFactory);  
 
-  constructor() { }
+    this.container.detach();
+ 
+  } 
+ 
+  
+ 
  
 
-  ngOnInit(): void {
-   
+  
+ 
+
+  ngOnInit(): void { 
+
+    
+    
   }
+
 
   url ="./assets/2016-11-24-19-44-28-525.jpg";
   url2 ="./assets/63.JPG";

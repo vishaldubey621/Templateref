@@ -7,6 +7,8 @@ import { NgIf } from '@angular/common';
   styleUrls: ['./dynamic.component.css']
 })
 export class DynamicComponent implements OnInit {
+  
+  
   public Employee = {
     $implicit : 'vishal',
 
@@ -36,6 +38,7 @@ export class DynamicComponent implements OnInit {
     ]
  
   }
+  static container: any;
    constructor() { }
       isValid :boolean = false;
       EmployeeSallary  
@@ -46,6 +49,7 @@ export class DynamicComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -5,6 +5,7 @@ import { DynamicComponent } from './dynamic/dynamic.component';
 import { PracticeComponent } from './practice/practice.component';
 import { FormComponent } from './form/form.component';
 import { AngularCdkComponent } from './angular-cdk/angular-cdk.component';
+import { OverlayComponent } from './overlay/overlay.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,12 @@ const routes: Routes = [
      {
       path : 'cdk',
       component : AngularCdkComponent
+    },
+    {
+      path : 'overlay',
+      component : OverlayComponent
     }
+    
     
 ];
 

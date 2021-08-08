@@ -1,10 +1,21 @@
 
 <h2>About</h2>
-<div class="form-group">
-   
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search name"[(ngModel)]="nameSearch">
-  </div>
 
+   <div class="col-sm-8">
+     <div class="button">
+     <button type="button" class="btn btn-primary" #profileBtnRef 
+     (click)="viewProfile(profileBtnRef)" >view profile</button></div>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter to search name ..."[(ngModel)]="nameSearch">
+    
+    <button type="button" class="btn btn-primary" (click)="onfilter()">Search</button>
+    <button type="button" class="btn btn-secondary" (click)="onfilterclear()">clear</button>
+  </div>
+  <!-- <select [(ngModel)]="NameSearch">
+    <option>Srno</option>
+    <option>Srno</option>
+  </select> -->
+
+<div class="table-hover">
 <table class="table">
 
     <thead class="thead-dark">
@@ -17,11 +28,14 @@
     </thead>
     <tbody>
       <!-- use custome pipe name filter -->
-      <tr *ngFor="let name of nameArr | filter:nameSearch">
+      <tr *ngFor="let name of nameArr | filter:search | paginate: { itemsPerPage: 8, currentPage: p };  let i = index "appHighlight>
         <th scope="row">{{name.Srno}}</th>
-        <td>{{name.Name}}</td>
+        <td>{{name.Name}}</td> 
         <td>{{name.Sallary}}</td>
      </tr>
      
     </tbody>
-  </table>
+  </table>      
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+ 
+
